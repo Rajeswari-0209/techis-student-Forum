@@ -28,26 +28,27 @@ const StudentForm = () => {
   const inputPhone = (event) => {
     setPhone(event.target.value);
   };
-  const inputCourse= (event) => {
+  const inputCourse = (event) => {
     setCourse(event.target.value);
   };
-  const inputStatus= (event) => {
+  const inputStatus = (event) => {
     setStatus(event.target.value);
   };
+
 
   const inputImage = (event) => {
     setImage(event.target.files[0]);
   };
 
   const addStudentButton = () => {
-    dispatch(addStudent(name,country,email,phone,course,status,image));
-      setName("");
-      setCountry("");
-      setEmail("");
-      setPhone("");
-      setCourse("");
-      setStatus("");
-      setImage([]);
+    dispatch(addStudent(name, country, email, phone, course, status, image));
+    setName("");
+    setImage([]);
+    setCountry("");
+    setEmail("");
+    setPhone("");
+    setCourse("");
+    setStatus("");
   };
 
   return (
@@ -64,6 +65,7 @@ const StudentForm = () => {
       <input name="image" type="file" onChange={inputImage} />
       <input type="submit" value="Student" onClick={addStudentButton} />
     </section>
+
   );
 };
 
