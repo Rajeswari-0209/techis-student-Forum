@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 class Student(models.Model):
     
@@ -24,8 +24,11 @@ class Student(models.Model):
         'Status',  max_length=30, db_index=True , default=''
     )
      
-    image = models.CharField(
-        'image', max_length=1000, db_index=True, default='Anonymous'
+    # image = models.CharField(
+    #     'image', max_length=1000, db_index=True, default='Anonymous'
+    # )
+    image = CloudinaryField(
+        'image', blank=True, null=True
     )
     
     created_at = models.DateTimeField(

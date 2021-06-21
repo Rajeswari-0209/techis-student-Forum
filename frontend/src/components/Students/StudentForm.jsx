@@ -40,14 +40,14 @@ const StudentForm = () => {
   };
 
   const addStudentButton = () => {
-    dispatch(addStudent(name, country,email,phone,course,status,image));
-    setName("");
-    setCountry("");
-    setEmail("");
-    setPhone("");
-    setCourse("");
-    setStatus("");
-    setImage([]);
+    dispatch(addStudent(name,country,email,phone,course,status,image));
+      setName("");
+      setCountry("");
+      setEmail("");
+      setPhone("");
+      setCourse("");
+      setStatus("");
+      setImage([]);
   };
 
   return (

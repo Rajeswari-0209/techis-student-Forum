@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'techisstudentapp',
     'cloudinary',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +144,13 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+cloudinary.config(
+    cloud_name="techis",
+    api_key="886187759951178",
+    api_secret="WGcWrWfkPlxdOCdlFaLTdjSNtfo",
+    secure=True
+)
+
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
